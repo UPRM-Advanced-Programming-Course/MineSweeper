@@ -95,8 +95,11 @@ public class MyPanel extends JPanel {
 			revealAdjacent(x, y-1);
 			revealAdjacent(x, y+1);
 		}
+		
+		System.out.println("Test");
 
 	}
+	
 
 
 
