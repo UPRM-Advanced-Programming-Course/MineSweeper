@@ -81,10 +81,10 @@ public class MyPanel extends JPanel {
 	}
 
 
-	//This method helps to find the adjacent boxes that doesn't have a mine. 
-	//It is partially implemented since d verify hasn't been discuss in class 
-	//Verify that the coordinates in the parameters are eligible.
-	//Also verify if there are mines around.
+	// This method helps to find the adjacent boxes that don't have a mine.
+	// It is partially implemented since the verify hasn't been discussed in class
+	// Verify that the coordinates in the parameters are valid.
+	// Also verifies if there are any mines around the x,y coordinate
 	public void revealAdjacent(int x, int y){
 		if((x<0) || (y<0) || (x>=9) || (y>=9)){return;}
 
