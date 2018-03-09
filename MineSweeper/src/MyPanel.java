@@ -9,7 +9,7 @@ public class MyPanel extends JPanel {
 	private static final long serialVersionUID = 3426940946811133635L;
 	private static final int GRID_X = 25;
 	private static final int GRID_Y = 25;
-	private static final int INNER_CELL_SIZE = 29;
+	private static final int INNER_CELL_SIZE = 70;
 	private static final int TOTAL_COLUMNS = 10;
 	private static final int TOTAL_ROWS = 11;   //Last row has only one cell
 	public int x = -1;
@@ -79,6 +79,30 @@ public class MyPanel extends JPanel {
 			}
 		}
 	}
+
+
+	// This method helps to find the adjacent boxes that don't have a mine.
+	// It is partially implemented since the verify hasn't been discussed in class
+	// Verify that the coordinates in the parameters are valid.
+	// Also verifies if there are any mines around the x,y coordinate
+	public void revealAdjacent(int x, int y){
+		if((x<0) || (y<0) || (x>=9) || (y>=9)){return;}
+
+		else {
+			colorArray[x][y] = Color.GRAY;
+			revealAdjacent(x-1, y);
+			revealAdjacent(x+1, y);
+			revealAdjacent(x, y-1);
+			revealAdjacent(x, y+1);
+		}
+		
+		System.out.println("Test");
+
+	}
+	
+
+
+
 	public int getGridX(int x, int y) {
 		Insets myInsets = getInsets();
 		int x1 = myInsets.left;
